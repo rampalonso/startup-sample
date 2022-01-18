@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Services({ services }) {
   return (
@@ -14,7 +14,9 @@ export default function Services({ services }) {
                       <img className="w-32 h-32 rounded-full lg:w-32 lg:h-32" src={service.image.url} alt="" />
                     </span>
                   </div>
-                  <h3 className="text-lg font-medium text-gray-900 tracking-tight">{service.name}</h3>
+                  <h3 className="text-lg font-medium text-gray-900 tracking-tight">
+                    <Link href={"/services/"+service.slug}><a className="hover:underline">{service.name}</a></Link>
+                  </h3>
                 </div>
               </div>
             </div>
