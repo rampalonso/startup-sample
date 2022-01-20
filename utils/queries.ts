@@ -14,6 +14,7 @@ query GetEventsBlock {
       slug
       description
       date
+      done
       expositorsCollection {
         items {
           name

@@ -5,4 +5,6 @@
  * @param filter Filter
  * @returns Single Object, First coincidence encountered by the filter
  */
-export const findItem = (arr: any[], key: string, filter: string) => arr.find(item => item[key] === filter);
+export const findItem = <T>(arr: any[], key: string, filter: string): T => {
+    return arr.find(item => item[key] === filter);
+}

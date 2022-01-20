@@ -4,11 +4,11 @@ import Footer from './Nav'
 export default function Layout({ children }) {
   return (
     <>
-      <Nav />
+      <Footer />
       <div className="page-content">
         {children}
       </div>
-      <Footer />
+      <Nav />
     </>
   )
 }
