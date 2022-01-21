@@ -1,4 +1,4 @@
-import { NextPage } from 'next'
+import Styles from "../../styles/modules/Layout/Layout.module.scss"
 import React from 'react'
 import Nav from './Footer'
 import Footer from './Nav'
@@ -7,15 +7,13 @@ type Props = {
   children: React.ReactNode
 }
 
- const Layout: NextPage<Props> = ({ children }) => {
+const Layout: React.FC<Props> = ({ children }) => {
   return (
-    <>
-      <Footer />
-      <div className="page-content">
-        {children}
-      </div>
-      <Nav />
-    </>
+    <div className={Styles['main-content']}>
+      <Nav></Nav>
+      {children}
+      <Footer></Footer>
+    </div>
   )
 }
 

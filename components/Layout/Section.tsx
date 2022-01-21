@@ -1,5 +1,6 @@
-import { NextPage } from "next"
+import Link from 'next/link';
 import React from "react"
+import Styles from "../../styles/modules/Layout/Section.module.scss"
 
 type Props = {
   title: string,
@@ -7,20 +8,20 @@ type Props = {
   cta: string
   children: React.ReactNode
 }
-const Section: NextPage<Props> = ({ title, description, cta, children }) => {
+const Section: React.FC<Props> = ({ title, description, cta, children }) => {
   return (
     <div>
-      <h2>{title}</h2>
+      <h2 className={Styles.title}>{title}</h2>
       {
         description &&
-        <p>
+        <p className={Styles.description}>
           {description}
         </p>
       }
       {children}
       {
         cta &&
-        <a href="#">{cta}</a>
+        <Link href={"#"}><a className={Styles.cta}>{cta}</a></Link> 
       }
     </div>
 

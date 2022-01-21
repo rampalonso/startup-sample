@@ -1,13 +1,14 @@
-import { NextPage } from "next"
+import React from "react"
+import Styles from "../../styles/modules/Layout/Footer.module.scss"
 
 type Props = {
   
 }
 
-const Footer: NextPage<Props> = ()=> {
+const Footer: React.FC<Props> = ()=> {
   return (
-    <footer>
-      <p>&copy; 2022 Workflow, Inc. All rights reserved.</p>
+    <footer className={Styles.footer}>
+      <p>&copy; {new Date().getFullYear()} Start Up, Inc. All rights reserved.</p>
     </footer>
   )
 }

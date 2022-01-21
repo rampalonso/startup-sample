@@ -1,29 +1,17 @@
-import { NextPage } from "next";
-import Link from 'next/link'
+import React from "react";
 import { IEvent } from '../../types'
+import CardEvent from '../common/CardEvent';
 
 type Props = {
   events: IEvent[]
 }
 
-const UpcomingEvents: NextPage<Props> = ({ events }) => {
+const UpcomingEvents: React.FC<Props> = ({ events }) => {
   if (!events) return <p>No events</p>
   return (
     <>
       {
-        events.map((event) => {
-          const { slug, title, description, date, done } = event;
-          const { name: expositor } = event.expositorsCollection.items[0]
-          return (
-            <div key={slug}>
-              <h1>{title}</h1>
-              <p>{description}</p>
-              <span>{date}</span>
-              <span>{expositor}</span>
-              <Link href={'/events/' + slug}><a>Ir al evento</a></Link>
-            </div>
-          )
-        })
+        events.map((event) => (<CardEvent key={event.slug} event={event} />))
       }
     </>
   )
