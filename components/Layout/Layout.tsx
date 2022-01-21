@@ -1,5 +1,5 @@
-import Styles from '../../styles/modules/Layout/Layout.module.scss'
 import React from 'react'
+import Styles from '../../styles/modules/Layout/Layout.module.scss'
 import Nav from './Footer'
 import Footer from './Nav'
 

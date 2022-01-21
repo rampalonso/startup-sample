@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { GetStaticProps, NextPage } from 'next'
+import Head from 'next/head';
 import { gql } from '@apollo/client'
 import client from '../apollo-client'
 
@@ -26,12 +27,15 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-const IndexPage: NextPage<Props> = ({ 
-  sections, events 
+const IndexPage: NextPage<Props> = ({
+  sections, events
 }) => {
   const { upcomingEvents } = sections;
   return (
     <>
+      <Head>
+        <title>SU Home</title>
+      </Head>
       <Section
         title={upcomingEvents.title}
         description={upcomingEvents.description}

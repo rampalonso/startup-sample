@@ -1,5 +1,5 @@
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext, NextPage } from 'next';
-
+import Head from 'next/head';
 import { gql } from '@apollo/client';
 import client from '../../apollo-client';
 import { IEvent } from '../../types';
@@ -36,6 +36,13 @@ export const getStaticProps: GetStaticProps = async ({ params }: GetStaticPropsC
 }
 
 const EventDetail: NextPage<Props> = ({ event }) => {
-  return (<CardEvent showCTA={false} event={event} />)
+  return (
+    <>
+    <Head>
+      <title>{event.title}</title>
+    </Head>
+      <CardEvent showCTA={false} event={event} />
+    </>
+  )
 }
 export default EventDetail
