@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
-import Link from "next/link";
-import React, { useState } from "react"
-import Styles from "../../styles/modules/Layout/Nav.module.scss"
+import Link from 'next/link';
+import React, { useState } from 'react'
+import Styles from '../../styles/modules/Layout/Nav.module.scss'
 
 
 

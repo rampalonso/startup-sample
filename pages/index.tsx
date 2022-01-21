@@ -3,8 +3,8 @@ import { GetStaticProps, NextPage } from 'next'
 import { gql } from '@apollo/client'
 import client from '../apollo-client'
 
-import Section from "../components/Layout/Section"
-import { UpcomingEvents } from "../components/sections"
+import Section from '../components/Layout/Section'
+import { UpcomingEvents } from '../components/sections'
 import { GetEventsBlock } from '../utils/queries'
 import { findItem } from '../utils/array'
 import { IEvent, ISection } from '../types'

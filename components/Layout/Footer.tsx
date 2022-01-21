@@ -1,5 +1,5 @@
-import React from "react"
-import Styles from "../../styles/modules/Layout/Footer.module.scss"
+import React from 'react'
+import Styles from '../../styles/modules/Layout/Footer.module.scss'
 
 type Props = {
   

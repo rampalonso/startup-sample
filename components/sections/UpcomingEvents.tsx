@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import { IEvent } from '../../types'
 import CardEvent from '../common/CardEvent';
 

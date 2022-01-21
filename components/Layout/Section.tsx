@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import React from "react"
-import Styles from "../../styles/modules/Layout/Section.module.scss"
+import React from 'react'
+import Styles from '../../styles/modules/Layout/Section.module.scss'
 
 type Props = {
   title: string,
@@ -21,7 +21,7 @@ const Section: React.FC<Props> = ({ title, description, cta, children }) => {
       {children}
       {
         cta &&
-        <Link href={"#"}><a className={Styles.cta}>{cta}</a></Link> 
+        <Link href={'#'}><a className={Styles.cta}>{cta}</a></Link> 
       }
     </div>
 

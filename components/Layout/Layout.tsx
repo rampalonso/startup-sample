@@ -1,4 +1,4 @@
-import Styles from "../../styles/modules/Layout/Layout.module.scss"
+import Styles from '../../styles/modules/Layout/Layout.module.scss'
 import React from 'react'
 import Nav from './Footer'
 import Footer from './Nav'
