@@ -8,9 +8,9 @@ export interface IEvent {
 }
 
 export interface IPerson {
-    slug: string
+    slug?: string
     name: string
-    photo: IAsset
+    photo?: IAsset
 }
 
 export interface IAsset {
