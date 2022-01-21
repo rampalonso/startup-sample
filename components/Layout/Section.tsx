@@ -1,4 +1,13 @@
-export default function Section({ title, description, cta, children }) {
+import { NextPage } from "next"
+import React from "react"
+
+type Props = {
+  title: string,
+  description: string
+  cta: string
+  children: React.ReactNode
+}
+const Section: NextPage<Props> = ({ title, description, cta, children }) => {
   return (
     <div>
       <h2>{title}</h2>
@@ -17,3 +26,5 @@ export default function Section({ title, description, cta, children }) {
 
   )
 }
+
+export default Section

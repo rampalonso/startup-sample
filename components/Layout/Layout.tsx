@@ -1,7 +1,13 @@
+import { NextPage } from 'next'
+import React from 'react'
 import Nav from './Footer'
 import Footer from './Nav'
 
-export default function Layout({ children }) {
+type Props = {
+  children: React.ReactNode
+}
+
+ const Layout: NextPage<Props> = ({ children }) => {
   return (
     <>
       <Footer />
@@ -12,3 +18,5 @@ export default function Layout({ children }) {
     </>
   )
 }
+
+export default Layout

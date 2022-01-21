@@ -1,8 +1,14 @@
 import { gql } from '@apollo/client';
+import { GetStaticPaths, GetStaticProps, GetStaticPropsContext, NextPage } from 'next';
 import client from '../../apollo-client';
+import { IEvent } from '../../types';
 import { GetEvents, GetEventBySlug } from '../../utils/queries'
 
-export async function getStaticPaths() {
+type Props = {
+  event: IEvent
+}
+
+export const getStaticPaths: GetStaticPaths = async () => {
   const { data } = await client.query({
     query: gql(GetEvents)
   })
@@ -15,20 +21,20 @@ export async function getStaticPaths() {
   }
 }
 
-export async function getStaticProps({ params }) {
+export const getStaticProps: GetStaticProps = async ({ params }: GetStaticPropsContext) => {
   const { data } = await client.query({
     query: gql(GetEventBySlug),
     variables: { slug: params.slug }
   })
   return {
     props: {
-      events: data.eventCollection.items[0]
+      event: data.eventCollection.items[0]
     }
   }
 }
 
-export default function ServiceDetail({ events }) {
-  const { title, description } = events
+const EventDetail: NextPage<Props> = ({ event }) => {
+  const { title, description } = event
   return (
     <div>
       <h1>{title}</h1>
@@ -36,3 +42,4 @@ export default function ServiceDetail({ events }) {
     </div>
   )
 }
+export default EventDetail
